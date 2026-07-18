@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-fifa-dark text-white font-sans overflow-x-hidden min-h-screen relative;
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(10, 25, 47, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel-hover {
+  @apply transition-all duration-300 hover:border-fifa-blue-light/30 hover:shadow-blue-glow;
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-fifa-blue focus:border-transparent transition-all duration-200;
+}
+
+/* Goal-net Mesh Overlay */
+.goal-net-overlay {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Evacuation Alarm Animation */
+@keyframes alarm-flash {
+  0%, 100% {
+    box-shadow: inset 0 0 40px rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+  50% {
+    box-shadow: inset 0 0 80px rgba(239, 68, 68, 0.6);
+    border-color: rgba(239, 68, 68, 1);
+  }
+}
+
+.emergency-alarm {
+  animation: alarm-flash 1.5s infinite;
+  border-width: 2px;
+}
+
+/* Neon Flowing Paths */
+.neon-path {
+  stroke-dasharray: 8, 8;
+  animation: dash 20s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+/* Accessibility Modes */
+.accessibility-large-text {
+  font-size: 1.15rem !important;
+}
+.accessibility-large-text h1 {
+  font-size: 2.25rem !important;
+}
+.accessibility-large-text h2 {
+  font-size: 1.75rem !important;
+}
+.accessibility-large-text h3 {
+  font-size: 1.5rem !important;
+}
+.accessibility-large-text p, 
+.accessibility-large-text span, 
+.accessibility-large-text li, 
+.accessibility-large-text button,
+.accessibility-large-text input {
+  font-size: 1.15rem !important;
+}
+
+.high-contrast-mode {
+  --tw-bg-opacity: 1 !important;
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+.high-contrast-mode .glass-panel {
+  background: #0D0D0D !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+.high-contrast-mode button {
+  background-color: #FFFF00 !important;
+  color: #000000 !important;
+  font-weight: 900 !important;
+  border: 2px solid #FFFFFF !important;
+}
+
+.high-contrast-mode input, 
+.high-contrast-mode textarea, 
+.high-contrast-mode select {
+  background-color: #000000 !important;
+  border: 2px solid #FFFFFF !important;
+  color: #FFFFFF !important;
+}
+
+.high-contrast-mode .text-gray-400,
+.high-contrast-mode .text-slate-400 {
+  color: #E2E8F0 !important;
+}
