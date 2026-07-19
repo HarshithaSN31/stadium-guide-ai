@@ -3,9 +3,19 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useAuth, api } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { StadiumMap } from '../components/StadiumMap';
-import { 
-  Navigation, Accessibility, Eye, Flame, Search, 
-  MapPin, HelpCircle, Footprints, Clock, Sparkles, X
+import {
+  Navigation,
+  Accessibility,
+  Eye,
+  Flame,
+  Search,
+  MapPin,
+  HelpCircle,
+  Footprints,
+  Clock,
+  Sparkles,
+  X,
+  AlertTriangle
 } from 'lucide-react';
 
 export const SmartMap = () => {
